@@ -25,7 +25,7 @@ public abstract class BankAccount {
             System.out.println(ownerName + "(" + accNumber + ") withdraw: " + amount);
             System.out.println("Balance: " + balance);
         } else {
-            throw new IllegalArgumentException("Not enough balance");
+            throw new IllegalArgumentException("Insufficient funds");
         }
     }
 
@@ -46,15 +46,6 @@ public abstract class BankAccount {
             balance -= amount;
             System.out.println("Transfer to: " + accDestination + " = " + amount);
             System.out.println("Balance: " + balance);
-        } else {
-            throw new IllegalArgumentException("Not enough balance");
-        }
-    }
-
-    public void paidBills(double amount){
-        if (balance >= amount) {
-            balance -= amount;
-            System.out.println(ownerName + "(" + accNumber + ") paid amount: " + amount);
         } else {
             throw new IllegalArgumentException("Not enough balance");
         }
